@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "7e335392-6a52-4296-bcb9-520ff09fdf6a",
+		"name": "Desafio NTT 4 Lançamento",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Lista Lancamento  - 200 OK",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/lancamentos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"lancamentos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cria Lancamento - 201 Created",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n\"name\": \"Parafusadeira \",\r\n\"description\": \"Bosch B-3512w\",\r\n\"type\": \"Ferramenta\",\r\n\"amount\": \"20\",\r\n\"date\": \"20220705\",\r\n\"payd\": true,\r\n\"categoryid\": \"{categoryid}\"\r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/lancamentos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"lancamentos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Busca Lancamento por ID - 200 OK",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/lancamentos/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"lancamentos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deleta Lancamentopor ID - 204 No Content",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/lancamentos/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"lancamentos",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualiza Lancamento por ID - 204 No Content",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/lancamentos/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"lancamentos",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Busca Lancamento por Pagamento True",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/lancamentos/pagamentos/true",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"lancamentos",
+						"pagamentos",
+						"true"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Busca Lancamento por Pagamento False True",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/lancamentos/pagamentos/false",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"lancamentos",
+						"pagamentos",
+						"false"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
