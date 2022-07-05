@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: trilha.back.financys.FinancysApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.396 s - in trilha.back.financys.FinancysApplicationTests
