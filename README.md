@@ -25,6 +25,6 @@
 |:----:|
 |O Spring Data é o modelo de programação dentro do Spring Framework para acesso e manipulação de dados. Chegando com a intenção de facilitar a configuração e utilização com o seu banco de dados, seja ele relacional ou não, o Spring Data traz vários recursos bacanas para acelerar o nosso desenvolvimento. Por exemplo, a configuração padronizada, onde devemos colocar apenas algumas propriedades e ele já vai saber o que fazer.|
 
-|  O Que caracteriz um projeto CRUD básico? |
+|  O Que caracteriza um projeto CRUD básico? |
 |:----:|
 |No meu ponto de vista um projeto crud básico, é caracterizado por conter as 4 funções CRUD. Como exemplo uma aplicação de lançamentos de produtos aonde criamos o produto, salvamos em um banco de dados, e ao decorrer do tempo temos necessidade de atualiza, deletar, e constantemente ler os dados do produto. Para min isso seria um projeto CRUD Básico...
