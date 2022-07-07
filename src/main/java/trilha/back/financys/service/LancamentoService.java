@@ -20,14 +20,15 @@ public class LancamentoService {
     private CategoriaService categoriaService;
     @Autowired
     private Optional<Categoria> categoria;
-    public Lancamento salvar(Lancamento lancamento){
-        categoria = categoriaService.buscarPorId(lancamento.getCategoryid());
 
-        if (!categoria.isPresent())
+
+    public Object salvar(Lancamento lancamento){
+
+        if (validateCategoryById(lancamento.getCategoryid()))
         {
-            throw new NullPointerException("Categoria nao encontrada!");
+            return lancamentoRepository.save(lancamento);
         }
-        return lancamentoRepository.save(lancamento);
+        return null;
     }
 
     public List<Lancamento> listaLancamento(){
@@ -47,5 +48,13 @@ public class LancamentoService {
     listlancamento = lancamentoRepository.findAll();
     List<Lancamento> listPagamentos = listlancamento.stream().filter(x-> x.getPayd() == payd).collect(Collectors.toList());
     return listPagamentos;
+    }
+
+    public boolean validateCategoryById(Long idCategory) {
+        if (categoriaService.buscarPorId(idCategory).isPresent())
+            return true;
+        else
+            return false;
+
     }
 }
