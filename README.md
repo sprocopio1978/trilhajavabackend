@@ -12,7 +12,7 @@
 
 | ORM EX: 01 | ORM EX: 02 | ORM EX: 03 |
 |------------|------------|------------|
-|            |            |            |
+|  Java- Hibernate  |  Phyton - Django  |  Node - Sequelize |
 
 
 | O que é JPA e qual é a sua relação com os ORM’s? |
