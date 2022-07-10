@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.modelmapper.ModelMapper;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -28,4 +29,6 @@ public class Categoria implements Serializable {
     @Column(name = "Descricao")
     private String description;
 
+    public Categoria(String nome, String description) {
+    }
 }

@@ -10,13 +10,12 @@ public class FinancysApplication {
 
 	@Bean
 	public ModelMapper modelMapper(){
-		ModelMapper modelMapper = new ModelMapper();
-		modelMapper.getConfiguration().setSkipNullEnabled(true);
-		return modelMapper;
+			return new ModelMapper();
 	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(FinancysApplication.class, args);
+
 	}
 
 }
