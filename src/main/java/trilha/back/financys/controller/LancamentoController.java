@@ -12,6 +12,7 @@ import trilha.back.financys.dto.LancamentoDTO;
 import trilha.back.financys.entity.Lancamento;
 import trilha.back.financys.service.LancamentoService;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,7 +27,7 @@ public class LancamentoController {
     private ModelMapper modelMapper;
 
     @PostMapping
-    public ResponseEntity<Object> salvar(@RequestBody Lancamento lancamento) {
+    public ResponseEntity<Object> salvar(@RequestBody @Valid Lancamento lancamento) {
         Object lcto = lancamentoService.salvar(lancamento);
         HttpHeaders headers = new HttpHeaders();
         headers.add("URL", "/lancamentos");
@@ -72,7 +73,7 @@ public class LancamentoController {
     }
 
     @DeleteMapping("/{id}")
-    public void removerLancamento(@PathVariable("id") Long id) {
+    public void removerLancamento(@PathVariable("id") @Valid Long id) {
         lancamentoService.buscarPorId(id)
                 .map(lancamento -> {
                     lancamentoService.removerPorId(lancamento.getId());
@@ -81,7 +82,7 @@ public class LancamentoController {
     }
 
     @PutMapping("/{id}")
-    public void atualizarLancamento(@PathVariable("id") Long Id, @RequestBody Lancamento lancamento) {
+    public void atualizarLancamento(@PathVariable("id") Long Id, @RequestBody @Valid Lancamento lancamento) {
         lancamentoService.buscarPorId(Id)
                 .map(lancamentoBase -> {
                     modelMapper.map(lancamento, lancamentoBase);

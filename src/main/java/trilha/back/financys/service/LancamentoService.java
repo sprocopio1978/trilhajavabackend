@@ -22,6 +22,7 @@ public class LancamentoService {
     @Autowired
     private Optional<Categoria> categoria;
 
+    Lancamento lancamento = new Lancamento();
 
     public Object salvar(Lancamento lancamento){
 
@@ -51,25 +52,14 @@ public class LancamentoService {
         List<Lancamento> listlancamento = new ArrayList<>();
         listlancamento = lancamentoRepository.findAll();
         List<Lancamento> listPagamentos = listPagamentos = listlancamento.stream().filter(x-> x.getPayd() == payd).collect(Collectors.toList());
-        for (Lancamento x : listlancamento){
-            if (x.getPayd() == payd){
-                listPagamentos.add(x);
-            }
-        }
-
-        return LancamentoDTO.convert(listPagamentos);
+               return LancamentoDTO.convert(listPagamentos);
     }
 
     public List<LancamentoDTO> listaCategoria(Long categoryId){
         List<Lancamento> listlancamento = new ArrayList<>();
         listlancamento = lancamentoRepository.findAll();
-        List<Lancamento> listCategoria = new ArrayList<>();
-        for (Lancamento x : listlancamento){
-            if (x.getCategoryid() == categoryId){
-                listCategoria.add(x);
-            }
-        }
-        return LancamentoDTO.convert(listCategoria);
+        List<Lancamento> listCategoria = listCategoria = listlancamento.stream().filter(x-> x.getCategoryid() == categoryId).collect(Collectors.toList());
+               return LancamentoDTO.convert(listCategoria);
     }
 
     public boolean validateCategoryById(Long idCategory) {
