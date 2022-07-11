@@ -10,6 +10,7 @@ import trilha.back.financys.dto.CategoriaDTO;
 import trilha.back.financys.entity.Categoria;
 import trilha.back.financys.service.CategoriaService;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,7 +25,7 @@ public class CategoriaController {
     private ModelMapper modelMapper;
 
     @PostMapping
-    public ResponseEntity<Object> salvar(@RequestBody Categoria categoria){
+    public ResponseEntity<Object> salvar(@RequestBody @Valid Categoria categoria){
         return ResponseEntity.ok().body(categoriaService.salvar(categoria));
     }
 
@@ -41,13 +42,13 @@ public class CategoriaController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> removerCategoria(@PathVariable("id") Long id){
+    public ResponseEntity<String> removerCategoria(@PathVariable("id") @Valid Long id){
         return ResponseEntity.ok().body(categoriaService.removerPorId(id));
 
 
     }
     @PutMapping("/{id}")
-    public ResponseEntity<Object> atualizarCatgoria(@PathVariable("id") Long id, @RequestBody Categoria categoria){
+    public ResponseEntity<Object> atualizarCatgoria(@PathVariable("id") Long id, @RequestBody @Valid Categoria categoria){
         return ResponseEntity.ok().body(categoriaService.atualizarPorId(id, categoria));
     }
 }
