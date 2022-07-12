@@ -8,14 +8,14 @@
 
 |                                                                                                       Controller                                                                                                        |
 |:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-|A camada de controle é responsável por intermediar as requisições enviadas pelo View com as respostas fornecidas pelas camadas de Serviço, processando os dados que o usuário informou e repassando para outras camadas. |
+|Sua função é ser uma camada intermediária entre a camada de apresentação (View) e a camada de negócios (Model). Deste modo, toda requisição criada pelo usuário deve passar pelo controller, e este então se comunica com o model. |
 
-|                         Repository                          |
-|:-----------------------------------------------------------:|
-|E a camada que fará comunicação entre o Serviço e a Entidade |
+|                                                                                      Repository                                                                                       |
+|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| é um padrão de projeto que visa mediar a pesquisa de objetos de dominio entre a camada de dominio e a camada de mapeamento de dados usando uma interface semelhante à de uma coleção. |
 
 
 
 |                                                         Service                                                          |
 |:------------------------------------------------------------------------------------------------------------------------:|
-|É a camada de serviços onde estarao presentes os serviços que faram a manipulação dos dados para enviar pro  Repositorio. |
+|O conceito de camada de serviços não é novo, já é utilizado no mercado há algum tempo. Ele surgiu da necessidade de uma camada responsável por fazer as tratativas de regras de negócios, tentando desacoplar a camada de Controladores da camada de Modelos. Essa separação de camadas é uma das formas de arquitetar a sua aplicação, mas existem muitas outras, e elas são utilizadas para atender requisitos não funcionais, como manutenibilidade, reusabilidade, desempenho e etc.|
